@@ -3,6 +3,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+    argocd.argoproj.io/rollback-name: testing
+    argocd.argoproj.io/revision-history-limit: "10"
+    argocd.argoproj.io/revision-history-max-per-app: "20"
   name: nginx-deployment
 spec:
   replicas: 4
